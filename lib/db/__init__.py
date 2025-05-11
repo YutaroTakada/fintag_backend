@@ -3,6 +3,7 @@ from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.ext.declarative import declarative_base
 from dotenv import load_dotenv
 import os
+from typing import Generator
 
 # 環境変数の読み込み
 load_dotenv()
@@ -21,7 +22,7 @@ Base = declarative_base()
 
 
 # セッションの依存性
-def get_db():
+def get_db() -> Generator[Session, None, None]:
     db = SessionLocal()
     try:
         yield db
