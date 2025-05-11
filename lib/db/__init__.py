@@ -19,6 +19,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 # モデルのベースクラス
 Base = declarative_base()
 
+
 # セッションの依存性
 def get_db():
     db = SessionLocal()

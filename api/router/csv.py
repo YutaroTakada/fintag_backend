@@ -3,7 +3,9 @@
 # FastAPI
 from fastapi import APIRouter
 import polars as pl
+
 router = APIRouter()
+
 
 # csvファイルを読み込むAPI
 @router.get("/csv")
