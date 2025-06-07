@@ -3,11 +3,14 @@
 # FastAPI
 from fastapi import APIRouter
 import polars as pl
+from typing import Dict, Any
+
 router = APIRouter()
+
 
 # csvファイルを読み込むAPI
 @router.get("/csv")
-def read_csv(file_path: str):
+def read_csv(file_path: str) -> Dict[str, Any]:
     # csvファイルを読み込む
     df = pl.read_csv(file_path)
-    return df
+    return {"data": df.to_dict()}

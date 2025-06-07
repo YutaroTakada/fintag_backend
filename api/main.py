@@ -1,16 +1,14 @@
-#FastAPI
+# FastAPI
 from fastapi import FastAPI
-from router import csv
+from .router import csv
+from typing import Dict
 
 app = FastAPI()
 
-#routerからのルーティング
+# routerからのルーティング
 app.include_router(csv.router)
 
+
 @app.get("/")
-def read_root():
+def read_root() -> Dict[str, str]:
     return {"message": "Hello World"}
-
-
-
-
