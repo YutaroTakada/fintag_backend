@@ -1,6 +1,6 @@
 # FastAPI
 from fastapi import FastAPI
-from router import csv
+from .router import csv
 from typing import Dict
 
 app = FastAPI()
