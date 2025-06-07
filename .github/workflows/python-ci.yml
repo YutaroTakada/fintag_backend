@@ -47,9 +47,9 @@ jobs:
       run: |
         mypy .
 
-    - name: Run tests with coverage
+    - name: Run tests
       run: |
-        pytest --cov=./ --cov-report=xml
+        pytest tests/
 
     - name: Check dependencies for vulnerabilities
       run: |
