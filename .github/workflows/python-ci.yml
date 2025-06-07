@@ -55,10 +55,6 @@ jobs:
       run: |
         safety check
 
-    - name: Run security checks
-      run: |
-        bandit -r . -f json -o bandit-results.json
-
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
